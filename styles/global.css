@@ -1,0 +1,150 @@
+/*==============================
+TABLE OF CONTENTS 
+
+|1| IMPORTS
+|2| VARIABLES
+|3| UTILITIES
+|4| BASIC ELEMENTS
+|5| CARD COMPONENT
+==============================*/
+
+/*==============================
+|1| IMPORTS
+==============================*/
+
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+/*==============================
+|2| VARIABLES
+==============================*/
+
+/* I know, completely overkill for this project, but this has been a fun (and eye-opening) exercise for me on just how difficult it is to name variables without them breaking down semantically the deeper you go.
+
+See /styles/variables.css - originally loaded these in via an @media enquiry but read an article on Stack Overflow which said that, for this particular instance (where I'm not specifying, for example a media size/type or grabbing a Google Font), doing it in the html is better as it means the browser can load all stylesheets simultaneously.
+
+https://stackoverflow.com/a/10037064
+
+*/
+
+/*==============================
+|3| UTILITIES
+==============================*/
+
+/* See /styles/variables.css */
+
+/*==============================
+|4| BASIC ELEMENTS
+==============================*/
+
+body {
+  background: var(--clr-primary);
+  color: var(--clr-content);
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-reg);
+  font-size: var(--fs-sm);
+}
+
+/* I imagine this heading would be h4/h5 etc in a bigger page, but for the purposes of this little exercise I'll stick to h1 as it's technically the main header on *this* page. */
+
+h1 {
+  color: var(--clr-important);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-lg);
+}
+
+a {
+  color: var(--clr-important);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: var(--clr-strong);
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  min-height: 100vh;
+}
+
+p {
+  margin: 0;
+}
+
+strong {
+  color: var(--clr-strong);
+  font-weight: var(--fw-semibold);
+}
+
+hr {
+  width: 100%;
+  border: none;
+  height: 1px;
+  background-color: var(--clr-tertiary);
+  margin-bottom: var(--g-sm);
+}
+
+/*==============================
+|6| CARD COMPONENT
+==============================*/
+
+.card {
+  max-width: 18.875rem;
+  margin: auto;
+  background-color: var(--clr-secondary);
+  padding: var(--g-md);
+  border-radius: var(--rad-md);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.0952917); /* Super subtle but the figma file has it */
+}
+
+.card > * {
+  margin-top: 0;
+  /* Resets the m-t for everything inside the card. */
+}
+
+.card-image {
+  border-radius: var(--rad-sm);
+  /* Couldn't put a margin-bottom in here as it would break the hover effect. Instead, added a margin-top to the next element. */
+}
+
+.card-title {
+  margin-top: var(--g-md);
+  margin-bottom: var(--g-sm);
+}
+
+.card-text-body {
+  font-weight: var(--fw-light);
+  font-size: var(--fs-md);
+  line-height: 1.625rem;
+  margin-bottom: var(--g-md);
+}
+
+.card-secondary-info {
+  justify-content: space-between;
+  margin-bottom: var(--g-md);
+  /* In this instance, used for the price and time left of the NFT. */
+}
+
+.card-footer {
+  align-items: center;
+  margin-bottom: var(--g-xs);
+  /* Used for the creator section */
+}
+
+.img-xxs {
+  margin-right: -6.5rem;
+  /* Had 2 choices to vertically align the icons with the text: either have them all as separate flex items, or make each "icon-text pair" it's own nested flex.
+  
+  I decided to go with the former, which lead to to me then having to add a negative margin to each icon to add a buffer with it's accompanying text.
+  
+  There has to be a better way to do this, right? Feels hacky af - maybe nested flex was the way to go. */
+}
+
+.img-xs {
+  max-width: 2.0625rem;
+  border: 1px solid #fff;
+}

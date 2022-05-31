@@ -1,0 +1,36 @@
+:root {
+  --clr-primary: hsl(217, 54%, 11%); /* Most common colour, example: body background colour. */
+  --clr-secondary: hsl(216, 50%, 16%); /* Secondary colour, example: component background */
+  --clr-tertiary: hsl(215, 32%, 27%); /* Tertiary colour, example: border, hr. */
+  --clr-important: hsl(0, 0%, 100%); /* Primary attention in element, example: heading tags. */
+  --clr-strong: hsl(178, 100%, 50%); /* Secondary attention in element, examples: strong tags, buttons or hover colour. */
+  --clr-content: hsl(215, 51%, 70%); /* Used on high-frequency elements, example: body text. */
+
+  --ff-primary: "Outfit", sans-serif; /* Main font family used throughout design. */
+
+  /* For font sizes, decided to go with a bootstrap style variable naming structure (e.g. xxsm, xsm, sm, md, lg etc) as I'm hoping to live in a world of milk and honey where the designers I'm working with don't give a dozen different font sizes for the site.
+  
+  Originally thought about going down the font-weight naming convention (e.g. using a scale of 100-900) but in practice, this felt a bit uncomfortable when I realised the font sizes given in this design didn't scale very well with this convention. */
+
+  --fs-sm: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.375rem;
+
+  /* Font weights */
+
+  --fw-light: 300;
+  --fw-reg: 400;
+  --fw-semibold: 600;
+
+  /* Originally thought about creating separate variables for margin and padding, but then decided that it would be over-complicating what are essentially both gutters, just used for different contexts. Therefore, decided to go with gutters (--g-) instead. */
+
+  --g-xs: 0.5rem; /* 8px */
+  --g-sm: 1rem; /* 16px */
+  --g-md: 1.5rem; /* 24px */
+  --g-lg: 2rem; /* 32px */
+
+  /* Radii */
+
+  --rad-sm: 0.5rem;
+  --rad-md: 0.9375rem; /* Seriously, couldn't they have just made it 16px for a nice easy 1rem... w/e */
+}

@@ -1,0 +1,99 @@
+/*=============== RANT ===============
+
+There is only one utility class here, and GOOD GOD, this was so much more of a ball-ache than anticipated.
+
+It felt like every example I could find online on how to create an overlay for an image either:
+
+- Relied on using background-image for the main image.
+- Required knowing the exact image dimensions of the main image (I wanted to implement this as a utility class so it could be re-used elsewhere, so knowing the dimensions was off the table: had to be width: 100%).
+- Only showed how to create an overlay colour, or how to overlay an image, but not both.
+
+I had no idea that the rabbit-hole this would take me down, but first I needed to learn about ::before and ::after css attributes which I'd not encountered yet.
+
+My initial attempt I put both the background image and the background colour into the same pseudo element (::after) which was what all the solutions on stack overflow etc suggested. However, this lead to the overlay icon being set at 50% opacity when I needed it to be 100%.
+
+The breakthrough came when I thought to myself "So there's this whole ::after thing that keeps on popping up here. Let's actually learn what the bloody thing is rather than copying it into my code and slapping myself on the back".
+
+It was upon researching the pseudo classes and actually understanding them that I began to realise the solution: use ::before for one part of the hover effect, and ::after for the other.
+
+Naturally, like the caveman that I am, I first tried the colour as the ::after and image as the ::before before realising "yes, idiot, the image is covered up by the colour. Try the other way around"
+
+THEN, I realised that I hadn't added the border-radius to the image. So I added it, and it became apparent that the overlay effect didn't have the border radius. Easy fix, however — just created a new utility class for the small radius and added that to the DOM.
+
+What a journey.
+
+ ================ RANT =============== */
+
+/* Container for any overlays, needs to be relative to work */
+
+.overlay-img-expand {
+  position: relative;
+}
+
+/* Selects anything within the container overlay and gives it a width */
+
+.overlay-img-expand * {
+  width: 100%;
+  vertical-align: top;
+}
+
+/* Overlay effect */
+
+.overlay-img-expand a:before {
+  content: "";
+  position: absolute; /* required to position overlay properly */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: var(--clr-strong);
+  opacity: 0; /* Makes overlay invisible when not hovered/focus. */
+  transition: all 0.1s;
+
+  /* border-radius: var(--rad-sm); */
+}
+
+.overlay-img-expand a:after {
+  content: "";
+  position: absolute; /* required to position overlay properly */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url("../images/icon-view.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0; /* Makes overlay invisible when not hovered/focus. */
+  transition: all 0.1s;
+  /* border-radius: var(--rad-sm); */
+}
+
+/* Adds overlay hover effect */
+
+.overlay-img-expand a:hover:before,
+.overlay-img-expand a:focus:before {
+  opacity: 0.5;
+}
+
+.overlay-img-expand a:hover:after,
+.overlay-img-expand a:focus:after {
+  opacity: 1;
+}
+
+/* Utility for adding sm radius to */
+
+.rad-sm-hover :before {
+  border-radius: var(--rad-sm);
+}
+
+.flex {
+  display: flex;
+}
+
+.g-r-sm {
+  gap: var(--g-sm);
+}
+
+.circle {
+  border-radius: 50%;
+}
