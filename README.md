@@ -42,8 +42,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Solution URL](https://www.frontendmentor.io/solutions/nft-card-challenge-h8UCt-xfyT)
+- [Live Site URL](https://sh-nft-card.netlify.app/)
 
 ## My process
 
@@ -53,7 +53,9 @@ Users should be able to:
 4. Laid out my CSS table of contents to keep everything in order.
 5. Got the card layout working, then moved onto colours and the other aesthetic stuff.
 6. As needed, created utility classes rather than unique classes for functionality such as hover effects that could be re-used in other areas in the future.
-7.
+7. Double-checked against Figma file to catch anything missing.
+8. Checked browser support.
+9. Commit!
 
 ### Built with
 
