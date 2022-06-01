@@ -91,7 +91,8 @@ hr {
 ==============================*/
 
 .card {
-  max-width: 18.875rem;
+  max-width: 21.875rem;
+  box-sizing: border-box;
   margin: auto;
   background-color: var(--clr-secondary);
   padding: var(--g-md);
