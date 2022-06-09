@@ -14,10 +14,7 @@ This is a solution to the [NFT preview card component challenge on Frontend Ment
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
-- [Author](#auREADME.mdthor)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
+- [Author](#author)
 
 ## Overview
 
@@ -88,5 +85,5 @@ Users should be able to:
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Website - [Sam Hemingway](https://samhemingway.github.io/)
+- Frontend Mentor - [@SamHemingway](https://www.frontendmentor.io/profile/SamHemingway)
